@@ -1,0 +1,26 @@
+{
+  "name": "log4ui",
+  "version": "0.0.2",
+  "description": "Logger implemented especially to run in browser",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mamoru1234/log4ui.git"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "Alexei Gontar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mamoru1234/log4ui/issues"
+  },
+  "homepage": "https://github.com/Mamoru1234/log4ui#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^2.6.2"
+  }
+}
