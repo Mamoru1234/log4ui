@@ -3,14 +3,14 @@ import { Logger } from './Logger';
 import { StoreAdapter } from './StoreAdapter';
 import { LocalStorageAdapter } from './LocalStorageAdapter';
 
-declare type LoggersMap = {[key: string]: Logger};
+export declare type LoggersMap = {[key: string]: Logger};
 declare type LoggersStateMap = {[key: string]: LogLevel};
 export declare type LabelPredicate = (label: string) => boolean;
 
 const stubTrue = () => true;
 
 export class LogManager {
-    private loggers: LoggersMap = {};
+    public loggers: LoggersMap = {};
     constructor(
         private storeKey: string,
         private storeAdapter: StoreAdapter = new LocalStorageAdapter()

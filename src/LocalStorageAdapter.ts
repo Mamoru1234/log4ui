@@ -1,10 +1,13 @@
 import { StoreAdapter } from './StoreAdapter';
 
 export class LocalStorageAdapter implements StoreAdapter {
+  constructor(
+    private lcs = localStorage
+  ) {}
   save(key: string, data: string): void {
-    localStorage.setItem(key, data);
+    this.lcs.setItem(key, data);
   }
   load(key: string): string | null {
-    return localStorage.getItem(key);
+    return this.lcs.getItem(key);
   }
 }

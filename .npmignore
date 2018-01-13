@@ -1,3 +1,11 @@
+.idea/
+
+.nyc_output/
+
 src/
+
+node_modules/
+
+test/
 
 package-lock.json
