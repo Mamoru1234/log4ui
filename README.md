@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/log4ui.svg?style=flat-square)](https://www.npmjs.com/package/log4ui)
 [![Build Status](https://travis-ci.org/Mamoru1234/log4ui.svg?branch=master)](https://travis-ci.org/Mamoru1234/log4ui)
 [![Coverage Status](https://coveralls.io/repos/github/Mamoru1234/log4ui/badge.svg?branch=master)](https://coveralls.io/github/Mamoru1234/log4ui?branch=master)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/log4ui)
 
 ### Motivation
 During development and debugging naturally we are adding a lot of logs of different levels, 
