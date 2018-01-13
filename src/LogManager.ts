@@ -56,9 +56,9 @@ export class LogManager {
     for(let label in this.loggers) {
       if (predicate(label)) {
         this.loggers[label].logLevel = logLevel;
-
       }
     }
+    this.saveLoggers();
   }
 
   public hideAll(): void {
