@@ -23,7 +23,7 @@ export class LogManager {
     if (!data) return;
     const loggersStateMap: LoggersStateMap = JSON.parse(data);
     for(let label in loggersStateMap) {
-      this.loggers[label] = new Logger(label, loggersStateMap[label]);
+      this.loggers[label] = new Logger(label, loggersStateMap[label], console);
     }
   }
 
@@ -67,7 +67,7 @@ export class LogManager {
 
   public getInstance(flag: string): Logger {
     if (!this.loggers[flag]) {
-      this.loggers[flag] = new Logger(flag, LogLevel.WARN);
+      this.loggers[flag] = new Logger(flag, LogLevel.WARN, console);
     }
     return this.loggers[flag];
   }

@@ -29,6 +29,16 @@ describe('LogManager', function () {
         lgm.enable('SomeTestLogger');
       }).to.throw();
     });
+
+    it('disable should throw with unknown flag', () => {
+      expect(() => {
+        lgm.disable('SomeTestLogger');
+      }).to.throw();
+    });
+
+    it('hide all still works', () => {
+      lgm.hideAll();
+    });
   });
 
 });

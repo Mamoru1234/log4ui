@@ -3,31 +3,32 @@ import { LogLevel } from './LogLevel';
 export class Logger {
   constructor(
     private label: string,
-    public logLevel: LogLevel
+    public logLevel: LogLevel,
+    private console: Console
   ) {
   }
 
   public log(...args: any[]): void {
     if(this.logLevel >= LogLevel.LOG) {
-      console.log(this.label, ...args);
+      this.console.log(this.label, ...args);
     }
   }
 
   public error(...args: any[]): void {
     if(this.logLevel >= LogLevel.ERROR) {
-      console.error(this.label, ...args);
+      this.console.error(this.label, ...args);
     }
   }
 
   public warn(...args: any[]): void {
     if (this.logLevel >= LogLevel.WARN) {
-      console.warn(this.label, ...args);
+      this.console.warn(this.label, ...args);
     }
   }
 
   public info(...args: any[]): void {
     if (this.logLevel >= LogLevel.INFO) {
-      console.info(this.label, ...args);
+      this.console.info(this.label, ...args);
     }
   }
 }
