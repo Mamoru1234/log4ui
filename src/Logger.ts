@@ -2,7 +2,7 @@ import { LogLevel } from './LogLevel';
 
 export class Logger {
   constructor(
-    private label: string,
+    public label: string,
     public logLevel: LogLevel,
     private console: Console
   ) {

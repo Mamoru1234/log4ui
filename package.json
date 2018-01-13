@@ -1,6 +1,6 @@
 {
   "name": "log4ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Logger implemented especially to run in browser",
   "scripts": {
     "prepublishOnly": "tsc",
