@@ -1,4 +1,4 @@
 export interface StoreAdapter {
-  save(key: string, data: any): void;
-  load(key: string): any;
+  save(key: string, data: string): void;
+  load(key: string): string | null;
 }
