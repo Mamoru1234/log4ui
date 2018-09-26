@@ -1,7 +1,9 @@
 .idea/
 
 .nyc_output/
+.dspm/
 
+build/
 dist/
 
 node_modules/
