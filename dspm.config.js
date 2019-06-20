@@ -1,30 +1,21 @@
-const { applyJSProjectPlugin } = require('./.dspm/dist/main/plugins/JSProjectPlugin');
-const {CopyTask} = require('./.dspm/dist/main/tasks/CopyTask');
-const {CmdTask} = require('./.dspm/dist/main/tasks/CmdTask');
-const {CleanTask} = require('./.dspm/dist/main/tasks/CleanTask');
+const {Task} = require('.dspm/dist/main/Task');
 
 module.exports = (project) => {
-  applyJSProjectPlugin(project);
-
-  CleanTask.create(project, 'clean')
-    .clean('build');
-
-  project.getTask('build')
+  project.getTask('compile')
     .dependsOn('clean');
 
-  CopyTask.create(project, 'copyPackage')
-    .from('package.json')
-    .into('build/module/package.json')
-    .dependsOn('build');
+  const build = new Task('build', project);
+  build
+    .dependsOn('compile')
+    .dependsOn('test');
 
-  CopyTask.create(project, 'package')
-    .from('build/dist')
-    .into('build/module')
-    .dependsOn('copyPackage');
+  project.getTask('package')
+    .fromFile('package.json', {
+      version: process.env.TRAVIS_TAG || 'local',
+    });
 
-  CmdTask.create(project, 'publish')
-    .command('npm publish ./build/module')
-    .dependsOn('package');
+  project.getTask('publish')
+    .token(process.env.TRAVIS_NPM_TOKEN);
 };
 
 

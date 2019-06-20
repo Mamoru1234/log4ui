@@ -3,7 +3,7 @@ import { LogLevel } from '../src/LogLevel';
 
 import { stub, assert } from 'sinon';
 
-declare type ExpectationArray = [{method: keyof Logger, currentLevel: LogLevel}];
+declare type ExpectationArray = Array<{method: keyof Logger, currentLevel: LogLevel}>;
 
 const calledExpectations: ExpectationArray = [
   {

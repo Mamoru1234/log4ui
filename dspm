@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 CWD=$(pwd)
-DSPM_VERSION=0.2.1
+DSPM_VERSION=0.5.1
 
 ensureArtifact () {
     if [ ! -d "$CWD/.dspm" ]; then
