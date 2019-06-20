@@ -8,6 +8,7 @@ module.exports = (project) => {
   build
     .dependsOn('compile')
     .dependsOn('test');
+  project.setTask('build', build);
 
   project.getTask('package')
     .fromFile('package.json', {
