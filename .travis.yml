@@ -3,7 +3,7 @@ node_js:
   - "10"
 script:
   - ./dspm build
-after_success: npm run coverage
+after_success: ./dspm coverage
 deploy:
   provider: script
   skip_cleanup: true

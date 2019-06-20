@@ -1,4 +1,4 @@
-const {Task} = require('.dspm/dist/main/Task');
+const {Task} = require('./.dspm/dist/main/Task');
 
 module.exports = (project) => {
   project.getTask('compile')
@@ -17,5 +17,3 @@ module.exports = (project) => {
   project.getTask('publish')
     .token(process.env.TRAVIS_NPM_TOKEN);
 };
-
-
